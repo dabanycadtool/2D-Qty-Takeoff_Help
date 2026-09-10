@@ -77,9 +77,9 @@
             </ul>
         </details>
 
-        <!-- Chapter 3 (Expanded layout) -->
-        <details open>
-            <summary>3. Quick Option</summary>
+        <!-- Chapter 3 -->
+        <details>
+            <summary><a href="#chapter-3" style="color:inherit; text-decoration:none;">3. Quick Option</a></summary>
             <ul>
                 <li><a href="#quick-overview">Quick Mode Workflow</a></li>
                 <li><a href="#quick-only-selected">Only-Selected</a></li>
@@ -88,20 +88,22 @@
             </ul>
         </details>
 
-        <!-- Chapter 4 -->
-        <details>
-            <summary><a href="#chapter-4" style="color:inherit; text-decoration:none;">4. Advanced Option</a></summary>
+        <!-- Chapter 4 (Expanded layout) -->
+        <details open>
+            <summary>4. Advanced Option</summary>
             <ul>
-                <li><a href="#ui-layout">4.1 Advanced UI Layout</a></li>
-                <li><a href="#source-display">4.2 Source & Display</a></li>
-                <li><a href="#item-addition">4.3 Item Addition Methods</a></li>
-                <li><a href="#calculation">4.4 Calculation</a></li>
+                <li><a href="#advanced-overview">4.1 Panorama Interface & Layout</a></li>
+                <li><a href="#available-layers">4.2 Available Layers List</a></li>
+                <li><a href="#category-tabs">4.3 Category Tabs & Transfer Controls</a></li>
+                <li><a href="#item-addition-methods">4.4 Advanced Import Workflows</a></li>
+                <li><a href="#verification-context-menu">4.5 Verification & Right-Click Context Menu</a></li>
+                <li><a href="#advanced-calculation">4.6 Calculation & Execution</a></li>
             </ul>
         </details>
 
         <!-- Chapter 5 -->
         <details>
-            <summary><a href="#chapter-5" style="color:inherit; text-decoration:none;">5. Result Window</a></summary>
+            <summary><a href="#chapter-5" style="color:inherit; text-decoration:none;">5. Result Window</a></li>
         </details>
     </nav>
 
@@ -223,25 +225,40 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
         <!-- CHAPTER 4: ADVANCED OPTION                 -->
         <!-- ========================================== -->
         <section id="chapter-4">
-            <h2>4. Advanced Option</h2>
-            <p>The <strong>Advanced</strong> option grants comprehensive user control over filtering, categorization, and custom measurements.</p>
-            
-            <h3 id="ui-layout">4.1 Advanced UI Layout</h3>
-            <p>The Advanced interface features a split layout: the left pane displays all available drawing layers, while the central workspace houses dedicated tabs for <strong>Linear</strong>, <strong>Area</strong>, and <strong>Count</strong> metrics alongside <strong>Add</strong> and <strong>Remove</strong> control tools.</p>
+            <h2 id="advanced-overview">4. Advanced Option</h2>
+            <p>The <strong>Advanced Option</strong> provides a professional, highly configurable panoramic setup interface (<code>AdvancedSetupForm</code>) designed for large-scale multi-disciplinary civil engineering projects. It grants complete oversight over layer mapping, categorization rules, and custom measurement setups.</p>
 
-            <h3 id="source-display">4.2 Source & Display Columns</h3>
-            <p>Inside each tab, items are categorized into two columns: <strong>Source</strong> and <strong>Display</strong>. Items assigned the exact same display name will automatically aggregate and sum their quantities together.</p>
+            <h3 id="available-layers">4.1 Available Layers List</h3>
+            <p>Located on the left-hand panel of the interface, the <strong>Available Layers</strong> list automatically scans and populates all active layers present in your current CAD drawing environment. A descriptive search and multiselect block allows you to review layers containing target elements before assignment.</p>
 
-            <h3 id="item-addition">4.3 Item Addition Methods</h3>
-            <p>Items can be added to your takeoff lists using multiple workflows:</p>
+            <h3 id="category-tabs">4.2 Category Tabs & Transfer Controls</h3>
+            <p>The central and right workspace features a tabbed structure dividing calculations into three distinct engineering disciplines:</p>
             <ul>
-                <li><strong>By Layer:</strong> Extract elements based directly on source layer assignments.</li>
-                <li><strong>From Selection:</strong> Manually pick specific entities straight from model space.</li>
-                <li><strong>Manual Tracing:</strong> If no geometry exists, users can define quantities manually by tracing linear paths or closed area boundaries.</li>
+                <li><strong>📏 Linear:</strong> For continuous length measurements (e.g., curbs, pipes, retaining walls).</li>
+                <li><strong>▧ Area:</strong> For closed surface boundary evaluations (e.g., pavement, sodding, structural pads).</li>
+                <li><strong>📌 Count:</strong> For discrete item tracking (e.g., signs, manholes, utility poles).</li>
+            </ul>
+            <p>Using the middle transfer buttons (<code>Add ➔</code> and <code>← Remove</code>), selected layers from the available list can be assigned directly into active calculation grids. Each tab features a dual-column layout:</p>
+            <ul>
+                <li><strong>Source Layer:</strong> Locked (read-only) parameter tracking the native drawing layer.</li>
+                <li><strong>Display Name:</strong> Fully editable text field allowing you to customize reporting names. Note that items assigned the exact same display name will automatically aggregate and sum their total quantities together in the final summary.</li>
             </ul>
 
-            <h3 id="calculation">4.4 Calculation</h3>
-            <p>Once your sources and display categories are fully configured, click the <strong>Calculate</strong> button to process the evaluation against the current drawing dataset.</p>
+            <h3 id="item-addition-methods">4.3 Advanced Import Workflows</h3>
+            <p>In addition to standard layer mapping, the left control panel provides powerful alternative import mechanisms via dedicated action buttons:</p>
+            <ul>
+                <li><strong>🎯 Add from Selection (&lt;):</strong> Interactively prompts you to select specific objects directly from model space. This mirrors the quick method logic, letting you filter and include either strictly selected items or all matching entities on that layer.</li>
+                <li><strong>⚙️ Define (&gt;):</strong> Opens manual definition tools allowing you to trace or define custom linear paths and area boundaries on the fly if pre-existing drawing geometry is unavailable.</li>
+            </ul>
+
+            <h3 id="verification-context-menu">4.4 Verification & Right-Click Context Menu</h3>
+            <p>To ensure total accuracy and data integrity across complex drawings, the Advanced setup provides a built-in verification tool. You can <strong>Right-Click</strong> on any added row inside the Linear, Area, or Count data grids to access a contextual menu option:</p>
+            <ul>
+                <li><strong>Select Objects on this Layer:</strong> Instantly highlights and selects the corresponding objects inside your model space drawing window, allowing you to visually confirm that the correct geometry is linked into the calculation engine.</li>
+            </ul>
+
+            <h3 id="advanced-calculation">4.5 Calculation & Execution</h3>
+            <p>Once your layers, categories, display names, and custom mappings are fully configured across the tabs, click the <strong>Calculate</strong> button in the bottom-right corner. This processes your custom rules against the drawing dataset and launches the structured results window.</p>
         </section>
 
         <!-- ========================================== -->

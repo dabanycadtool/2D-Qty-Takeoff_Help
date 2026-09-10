@@ -53,9 +53,9 @@
             <img src="DaB_ANY_Logo.png" alt="DaB ANY CAD Tools">
         </div>
         
-        <!-- Chapter 1 (Expanded with sub-links) -->
-        <details open>
-            <summary>1. Overview</summary>
+        <!-- Chapter 1 -->
+        <details>
+            <summary><a href="#chapter-1" style="color:inherit; text-decoration:none;">1. Overview</a></summary>
             <ul>
                 <li><a href="#getting-started">Getting Started</a></li>
                 <li><a href="#licence">Licence Management</a></li>
@@ -63,9 +63,14 @@
             </ul>
         </details>
 
-        <!-- Chapter 2 -->
-        <details>
-            <summary><a href="#chapter-2" style="color:inherit; text-decoration:none;">2. Core Operation</a></summary>
+        <!-- Chapter 2 (Expanded layout matching reference) -->
+        <details open>
+            <summary>2. Core Operation</summary>
+            <ul>
+                <li><a href="#core-how-to-use">How to Use the Application</a></li>
+                <li><a href="#measurable-items">Measurable Quantities & Units</a></li>
+                <li><a href="#item-import-methods">Item Import Methods</a></li>
+            </ul>
         </details>
 
         <!-- Chapter 3 -->
@@ -135,7 +140,7 @@
                 <li><strong>Secure Local Storage:</strong> All licensing preferences and system configurations are saved locally on your workstation within the secure Windows Registry hive (<code>HKEY_CURRENT_USER\Software\DAB_ANY\2D_Quantity</code>).</li>
                 <li><strong>No Tracking:</strong> This software operates free of third-party analytics trackers, background metrics collection, or behavioral profiling scripts. Network access is strictly restricted to secure validation routines.</li>
             </ul>
-            <p>The comprehensive policy is published online for legal, corporate infrastructure, and IT clearance reviews. You can access the live updates directly here: <a href="https://dabanycadtool.github.io/DaBANY-CAD-Policy/" target="_blank">DaB ANY CAD Privacy Policy & Terms</a>.</p>
+            <p>The comprehensive policy is published online for legal, corporate infrastructure, and IT clearance reviews. You can access the live updates directly here: <a href="https://dabanycadtool.github.io/dabany-policy/" target="_blank">DaB ANY CAD Privacy Policy & Terms</a>.</p>
         </section>
 
         <!-- ========================================== -->
@@ -143,8 +148,30 @@
         <!-- ========================================== -->
         <section id="chapter-2">
             <h2>2. Core Operation</h2>
-            <p>Upon activating the plugin via the command line (<code>QTY_UTI</code>), users are greeted with a primary workflow choice. The application operates in two distinct modes: <strong>Quick</strong> and <strong>Advanced</strong>.</p>
-            <p>Once calculations are processed, results are populated cleanly into a dedicated result window with options to review and export dataset metrics.</p>
+            <p>The Core Operation workflow dictates how users interact with the tool, define quantities, and extract datasets from the CAD workspace.</p>
+
+            <h3 id="core-how-to-use">How to Use the Application</h3>
+            <p>The application is activated directly from the <strong>DaB ANY CAD Tools</strong> ribbon tab or by entering the command <code>QTY_UTI</code> in the command line. Once launched, users are greeted with a primary mode selection offering two distinct paths:</p>
+            <ul>
+                <li><strong><a href="#chapter-3">Quick Option</a>:</strong> An automated, streamlined workflow designed for instant drawing evaluation.</li>
+                <li><strong><a href="#chapter-4">Advanced Option</a>:</strong> A fully customizable environment granting granular control over layers, object mappings, and manual measurement workflows.</li>
+            </ul>
+
+            <h3 id="measurable-items">Measurable Quantities & Units</h3>
+            <p>The tool processes three core engineering quantity categories, reporting values directly matching your active CAD drawing units:</p>
+            <ul>
+                <li><strong>Linear:</strong> Measures continuous lengths (e.g., curbs, pipes, fences, or polylines) reported in linear drawing units.</li>
+                <li><strong>Area:</strong> Evaluates closed boundary surfaces (e.g., pavement patches, sodding, or building footprints) reported in square drawing units.</li>
+                <li><strong>Count:</strong> Quantifies discrete item occurrences (e.g., manholes, signs, trees, or blocks) reported as absolute numerical quantities.</li>
+            </ul>
+
+            <h3 id="item-import-methods">Item Import Methods</h3>
+            <p>To populate your takeoff schedules, items can be brought into the application using three versatile methodologies:</p>
+            <ul>
+                <li><strong>By Object Layer:</strong> Automatically parse and group entities based on their source layer assignments in the drawing.</li>
+                <li><strong>By Picking from Drawing:</strong> Manually select specific CAD objects directly from model space to include in specific calculation groups.</li>
+                <li><strong>By Defining Area or Linear Objects:</strong> If source geometry does not pre-exist in the drawing, users can manually trace custom linear paths or closed area boundaries to establish new measurement items on the fly.</li>
+            </ul>
         </section>
 
         <!-- ========================================== -->

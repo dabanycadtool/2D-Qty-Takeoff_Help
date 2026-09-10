@@ -1,3 +1,6 @@
+Here is the updated full HTML manual. I have integrated your exact Chapter 1 content, customized it for **DaB 2D Quantity Takeoff** (adjusting names, command lines to `QTY_UTI`, and trial length to 3 days), hooked up the working privacy policy link, and configured the sidebar navigation with the sub-links matching your layout screenshot.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
     
     <style>
         /* Base Page Layout */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; display: flex; background: #f9f9f9; color: #333; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; display: flex; background: #f9f9f9; color: #333; scroll-behavior: smooth; }
         main { margin-left: 340px; padding: 40px; max-width: 800px; background: #fff; margin-top: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); width: 100%; }
         
         /* Main Body Headers */
@@ -53,9 +56,14 @@
             <img src="DaB_ANY_Logo.png" alt="DaB ANY CAD Tools">
         </div>
         
-        <!-- Chapter 1 -->
+        <!-- Chapter 1 (Expanded with sub-links) -->
         <details open>
-            <summary><a href="#chapter-1" style="color:inherit; text-decoration:none;">1. Overview</a></summary>
+            <summary>1. Overview</summary>
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#licence">Licence Management</a></li>
+                <li><a href="#policy">Privacy Policy</a></li>
+            </ul>
         </details>
 
         <!-- Chapter 2 -->
@@ -68,7 +76,7 @@
             <summary><a href="#chapter-3" style="color:inherit; text-decoration:none;">3. Quick Option</a></summary>
         </details>
 
-        <!-- Chapter 4 (With Sub-links) -->
+        <!-- Chapter 4 -->
         <details>
             <summary><a href="#chapter-4" style="color:inherit; text-decoration:none;">4. Advanced Option</a></summary>
             <ul>
@@ -87,22 +95,72 @@
 
     <!-- Main Content Area -->
     <main>
+        <!-- ========================================== -->
+        <!-- CHAPTER 1: OVERVIEW                        -->
+        <!-- ========================================== -->
         <section id="chapter-1">
-            <h2>1. Overview</h2>
-            <p><strong>DaB 2D Quantity Takeoff</strong> is a custom AutoCAD and Civil 3D utility engineered to streamline the extraction and calculation of linear lengths, surface areas, and item counts directly from your CAD drawings.</p>
+            <h2 id="getting-started">Getting Started</h2>
+            <p>The <strong>DaB 2D Quantity Takeoff</strong> is a high-performance utility engineered for Autodesk® AutoCAD® and Civil 3D®. It streamlines estimation workflows by accurately extracting and calculating linear lengths, surface areas, and item counts directly from your CAD drawing environment based on custom layer rules and selections.</p>
+            
+            <h3>System Requirements</h3>
+            <ul>
+                <li><strong>Host Application:</strong> Autodesk® AutoCAD® or Civil 3D® (Versions 2025 through 2026+)</li>
+                <li><strong>Operating System:</strong> Microsoft® Windows® 10 or 11 (64-bit / x64 Architecture Required)</li>
+                <li><strong>Runtime Environment:</strong> Microsoft® .NET Desktop Runtime 8.0 (automatically managed by modern AutoCAD installations)</li>
+                <li><strong>User Interface Framework:</strong> Windows Presentation Foundation (WPF) Desktop Core</li>
+            </ul>
+
+            <h3>Installation & Quick Launch</h3>
+            <p>The utility features a fully automated installer tailored for the Autodesk® App Store environment. Upon executing the <code>.msi</code> package, all binaries, dependencies, and menu configurations are deployed directly into your system's secure <code>ApplicationPlugins</code> directory.</p>
+            <p>To initialize the program within your active CAD workspace:</p>
+            <ol style="line-height: 1.6; margin-left: 20px;">
+                <li>Launch <strong>AutoCAD®</strong> or <strong>Civil 3D®</strong> (Version 2025 or newer).</li>
+                <li>Look for the newly added <strong>DaB ANY CAD Tools</strong> tab on your top AutoCAD Ribbon menu interface.</li>
+                <li>Click the <strong>2D Quantity Takeoff</strong> button icon within the ribbon panel to dynamically toggle the interface control board.</li>
+                <li><em>Alternative Command Line Method:</em> You can also type <strong><code>QTY_UTI</code></strong> directly into the command prompt at any time to execute the app.</li>
+            </ol>
+
+            <h2 id="licence">Licence Management</h2>
+            <p>We provide a fully functional, risk-free <strong>3-Day Free Trial</strong> for all new users to evaluate the takeoff calculation engine. After the trial period expires, a valid license key is required to maintain access to extraction and export routines.</p>
+            
+            <h3>Activation Steps</h3>
+            <p>When the application launches or when evaluating trial status, the licensing screen will display your unique, secure <strong>Hardware Fingerprint (Machine ID)</strong>.</p>
+            <ol style="line-height: 1.6; margin-left: 20px;">
+                <li>Copy the generated Machine ID string directly from the prompt window or About form.</li>
+                <li>Submit this ID alongside your Autodesk App Store purchase confirmation to receive your unique activation key.</li>
+                <li>Paste your key into the text field and click <strong>Activate License</strong>. The utility will store this authorization locally on your device for uninterrupted usage.</li>
+            </ol>
+
+            <h2 id="policy">Privacy Policy & Security Compliance</h2>
+            <p>We prioritize your project security and design confidentiality. In strict compliance with Autodesk App Store Developer Guidelines, our software operates using a fully transparent, localized architecture.</p>
+            <ul>
+                <li><strong>Zero Data Exfiltration:</strong> We do not collect, view, store, or transmit your CAD drawing files (<code>.dwg</code>), design variations, project metadata, or any corporate intellectual property.</li>
+                <li><strong>Secure Local Storage:</strong> All licensing preferences and system configurations are saved locally on your workstation within the secure Windows Registry hive (<code>HKEY_CURRENT_USER\Software\DAB_ANY\2D_Quantity</code>).</li>
+                <li><strong>No Tracking:</strong> This software operates free of third-party analytics trackers, background metrics collection, or behavioral profiling scripts. Network access is strictly restricted to secure validation routines.</li>
+            </ul>
+            <p>The comprehensive policy is published online for legal, corporate infrastructure, and IT clearance reviews. You can access the live updates directly here: <a href="https://dabanycadtool.github.io/dabany-policy/" target="_blank">DaB ANY CAD Privacy Policy & Terms</a>.</p>
         </section>
 
+        <!-- ========================================== -->
+        <!-- CHAPTER 2: CORE OPERATION                  -->
+        <!-- ========================================== -->
         <section id="chapter-2">
             <h2>2. Core Operation</h2>
             <p>Upon activating the plugin via the command line (<code>QTY_UTI</code>), users are greeted with a primary workflow choice. The application operates in two distinct modes: <strong>Quick</strong> and <strong>Advanced</strong>.</p>
             <p>Once calculations are processed, results are populated cleanly into a dedicated result window with options to review and export dataset metrics.</p>
         </section>
 
+        <!-- ========================================== -->
+        <!-- CHAPTER 3: QUICK OPTION                    -->
+        <!-- ========================================== -->
         <section id="chapter-3">
             <h2>3. Quick Option</h2>
             <p>The <strong>Quick</strong> option is built for rapid, automated evaluation. When invoked, the tool instantly scans the drawing environment and compiles all linear, area, and count quantities across defined criteria without requiring manual mapping setup.</p>
         </section>
 
+        <!-- ========================================== -->
+        <!-- CHAPTER 4: ADVANCED OPTION                 -->
+        <!-- ========================================== -->
         <section id="chapter-4">
             <h2>4. Advanced Option</h2>
             <p>The <strong>Advanced</strong> option grants comprehensive user control over filtering, categorization, and custom measurements.</p>
@@ -125,6 +183,9 @@
             <p>Once your sources and display categories are fully configured, click the <strong>Calculate</strong> button to process the evaluation against the current drawing dataset.</p>
         </section>
 
+        <!-- ========================================== -->
+        <!-- CHAPTER 5: RESULT WINDOW                   -->
+        <!-- ========================================== -->
         <section id="chapter-5">
             <h2>5. Result Window</h2>
             <p>The final <strong>Result Window</strong> exhibits a structured table of all extracted quantities, categorized by type. From here, users can review final sums and export metrics for cost estimation and reporting.</p>
@@ -133,3 +194,7 @@
 
 </body>
 </html>
+
+```
+
+Whenever you are ready, send over the text edits for Chapters 2 through 5, and we'll plug them straight in!

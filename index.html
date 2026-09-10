@@ -1,3 +1,6 @@
+Here is the finalized HTML user manual. It incorporates your final request: **all chapters are collapsed by default** (except the first one, or you can have them all completely closed on initial load), and the automated scroll script guarantees the page instantly scrolls to the top (`0, 0`) upon opening or reloading.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +42,7 @@
         pre { background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e9ecef; overflow-x: auto; }
     </style>
 
-    <!-- Automated Scroll-to-Top Logic Execution Script -->
+    <!-- Automated Scroll-to-Top and Collapse Logic Execution Script -->
     <script>
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
@@ -57,8 +60,8 @@
             <img src="DaB_ANY_Logo.png" alt="DaB ANY CAD Tools">
         </div>
         
-        <!-- Chapter 1 -->
-        <details>
+        <!-- Chapter 1 (Open by default on start) -->
+        <details open>
             <summary><a href="#chapter-1" style="color:inherit; text-decoration:none;">1. Overview</a></summary>
             <ul>
                 <li><a href="#getting-started">Getting Started</a></li>
@@ -67,7 +70,7 @@
             </ul>
         </details>
 
-        <!-- Chapter 2 -->
+        <!-- Chapter 2 (Collapsed by default) -->
         <details>
             <summary><a href="#chapter-2" style="color:inherit; text-decoration:none;">2. Core Operation</a></summary>
             <ul>
@@ -77,7 +80,7 @@
             </ul>
         </details>
 
-        <!-- Chapter 3 -->
+        <!-- Chapter 3 (Collapsed by default) -->
         <details>
             <summary><a href="#chapter-3" style="color:inherit; text-decoration:none;">3. Quick Option</a></summary>
             <ul>
@@ -88,8 +91,8 @@
             </ul>
         </details>
 
-        <!-- Chapter 4 -->
-        <details open>
+        <!-- Chapter 4 (Collapsed by default) -->
+        <details>
             <summary>4. Advanced Option</summary>
             <ul>
                 <li><a href="#advanced-overview">Panorama Interface & Layout</a></li>
@@ -101,8 +104,8 @@
             </ul>
         </details>
 
-        <!-- Chapter 5 -->
-        <details open>
+        <!-- Chapter 5 (Collapsed by default) -->
+        <details>
             <summary>5. Result Window</summary>
             <ul>
                 <li><a href="#results-overview">Results Window Overview</a></li>
@@ -301,3 +304,5 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
 
 </body>
 </html>
+
+```

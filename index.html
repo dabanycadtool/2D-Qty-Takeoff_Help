@@ -33,6 +33,10 @@
         nav li { margin: 6px 0; padding-left: 12px; border-left: 1px solid #e1e4e8; }
         nav li a { color: #0366d6; font-size: 0.9em; text-decoration: none; }
         nav li a:hover { color: #0056b3; text-decoration: underline; }
+
+        /* Code/Prompt blocks */
+        code { background: #f1f3f5; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.95em; color: #d63384; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e9ecef; overflow-x: auto; }
     </style>
 
     <!-- Automated Scroll-to-Top Logic Execution Script -->
@@ -63,9 +67,9 @@
             </ul>
         </details>
 
-        <!-- Chapter 2 (Expanded layout matching reference) -->
-        <details open>
-            <summary>2. Core Operation</summary>
+        <!-- Chapter 2 -->
+        <details>
+            <summary><a href="#chapter-2" style="color:inherit; text-decoration:none;">2. Core Operation</a></summary>
             <ul>
                 <li><a href="#core-how-to-use">How to Use the Application</a></li>
                 <li><a href="#measurable-items">Measurable Quantities & Units</a></li>
@@ -73,9 +77,15 @@
             </ul>
         </details>
 
-        <!-- Chapter 3 -->
-        <details>
-            <summary><a href="#chapter-3" style="color:inherit; text-decoration:none;">3. Quick Option</a></summary>
+        <!-- Chapter 3 (Expanded layout) -->
+        <details open>
+            <summary>3. Quick Option</summary>
+            <ul>
+                <li><a href="#quick-overview">Quick Mode Workflow</a></li>
+                <li><a href="#quick-only-selected">Only-Selected</a></li>
+                <li><a href="#quick-entire-layer">Entire-Layer</a></li>
+                <li><a href="#quick-result-window">Quick Result Window & Export</a></li>
+            </ul>
         </details>
 
         <!-- Chapter 4 -->
@@ -178,8 +188,35 @@
         <!-- CHAPTER 3: QUICK OPTION                    -->
         <!-- ========================================== -->
         <section id="chapter-3">
-            <h2>3. Quick Option</h2>
-            <p>The <strong>Quick</strong> option is built for rapid, automated evaluation. When invoked, the tool instantly scans the drawing environment and compiles all linear, area, and count quantities across defined criteria without requiring manual mapping setup.</p>
+            <h2 id="quick-overview">3. Quick Option</h2>
+            <p>The <strong>Quick Option</strong> mode is designed for rapid, straightforward takeoffs directly from drawing elements without requiring complex configuration panels. When selected, the tool prompts you inside the AutoCAD command line to interact with your drawing objects.</p>
+            
+            <p>During execution, the command prompt displays the following interactive mode prompt:</p>
+            <pre><code>Select objects:
+Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
+
+            <h3 id="quick-only-selected">Only-Selected</h3>
+            <p>When this mode is active, <strong>Only-Selected</strong> ensures that strictly the individual items and drawing entities you manually clicked or window-selected are evaluated and added to the calculation list. Surrounding objects on the same layer are ignored.</p>
+
+            <h3 id="quick-entire-layer">Entire-Layer</h3>
+            <p>Selecting <strong>Entire-Layer</strong> switches the scope so that once an object is picked, all matching geometry residing on that same source layer across the drawing environment is aggregated and added to the calculation dataset automatically.</p>
+
+            <h3 id="quick-result-window">Quick Result Window & Export Methods</h3>
+            <p>Following object selection, the data compiles instantly into the <strong>Quantity Takeoff Results</strong> window. Adhering to professional Autodesk App Store design standards, this window features an adaptive interface with a built-in theme toggle (<code>🌓 Theme</code>) supporting dynamic Dark and Light workspace layouts.</p>
+            
+            <p>The results window displays a clean data grid layout containing:</p>
+            <ul>
+                <li><strong>Layer / Item:</strong> Identifies the source layer or item description.</li>
+                <li><strong>Category:</strong> Defines whether the measurement is Linear, Area, or Count.</li>
+                <li><strong>Quantity / Value:</strong> Shows the calculated aggregate measurement matching current drawing scales.</li>
+            </ul>
+
+            <p>At the bottom right of the window, multiple export and reporting tools are available:</p>
+            <ul>
+                <li><strong>📐 Insert Table:</strong> Instantly generates and embeds a professional quantity schedule table directly inside your active AutoCAD drawing layout.</li>
+                <li><strong>🌐 Export HTML:</strong> Dumps the takeoff data into a clean, formatted HTML report file for sharing, archiving, or cost-estimating handoffs.</li>
+                <li><strong>Close:</strong> Safely exits the result window back to the drawing workspace.</li>
+            </ul>
         </section>
 
         <!-- ========================================== -->

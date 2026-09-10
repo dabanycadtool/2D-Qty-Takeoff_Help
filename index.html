@@ -17,24 +17,22 @@
         /* Global Navigation Structural Constraints */
         nav { width: 300px; background: #fff; height: 100vh; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.05); position: fixed; overflow-y: auto; box-sizing: border-box; }
         
-        /* Collapsible Menu Components */
+        /* Sidebar Logo Area */
+        .sidebar-logo { text-align: center; margin-bottom: 25px; }
+        .sidebar-logo img { max-width: 200px; height: auto; }
+
+        /* Expandable Chapter Menu Components */
         details { margin-bottom: 15px; }
         summary { font-size: 1.1em; font-weight: 700; color: #111; cursor: pointer; padding: 6px 0; border-bottom: 2px solid #0366d6; display: flex; justify-content: space-between; align-items: center; outline: none; list-style: none; }
         summary::-webkit-details-marker { display: none; }
         summary::after { content: "▸"; font-size: 0.8em; color: #0366d6; transition: transform 0.2s ease; }
         details[open] summary::after { content: "▾"; }
         
-        /* Clean Technical Documentation Style Group Subheaders */
-        .nav-group-header { font-size: 0.85em; font-weight: 700; color: #586069; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 15px; margin-bottom: 6px; }
-        
-        /* Navigation Links & Lists */
-        nav ul { list-style: none; padding-left: 0; margin: 0; }
+        /* Sub-links inside expanded chapters */
+        nav ul { list-style: none; padding-left: 10px; margin: 8px 0 0 0; }
         nav li { margin: 6px 0; padding-left: 12px; border-left: 1px solid #e1e4e8; }
-        nav li a { color: #0366d6; font-size: 0.95em; text-decoration: none; }
+        nav li a { color: #0366d6; font-size: 0.9em; text-decoration: none; }
         nav li a:hover { color: #0056b3; text-decoration: underline; }
-        
-        /* Miscellaneous Alerts */
-        .construction-box { background: #fff8dc; border-left: 4px solid #ffb900; padding: 15px; margin: 15px 0; border-radius: 4px; color: #856404; font-weight: 500; }
     </style>
 
     <!-- Automated Scroll-to-Top Logic Execution Script -->
@@ -51,27 +49,40 @@
 
     <!-- Sidebar Navigation -->
     <nav>
-        <h2>DaB 2D Quantity Takeoff</h2>
+        <div class="sidebar-logo">
+            <!-- Replace with your actual logo image path if hosted in repo -->
+            <img src="logo.png" alt="DaB ANY CAD Tools">
+        </div>
         
+        <!-- Chapter 1 -->
         <details open>
-            <summary>Table of Contents</summary>
+            <summary><a href="#chapter-1" style="color:inherit; text-decoration:none;">1. Overview</a></summary>
+        </details>
+
+        <!-- Chapter 2 -->
+        <details>
+            <summary><a href="#chapter-2" style="color:inherit; text-decoration:none;">2. Core Operation</a></summary>
+        </details>
+
+        <!-- Chapter 3 -->
+        <details>
+            <summary><a href="#chapter-3" style="color:inherit; text-decoration:none;">3. Quick Option</a></summary>
+        </details>
+
+        <!-- Chapter 4 (With Sub-links) -->
+        <details>
+            <summary><a href="#chapter-4" style="color:inherit; text-decoration:none;">4. Advanced Option</a></summary>
             <ul>
-                <li><a href="#chapter-1">1. Overview</a></li>
-                <li><a href="#chapter-2">2. Core Operation</a></li>
-                <li>
-                    <a href="#chapter-3">3. Quick Option</a>
-                </li>
-                <li>
-                    <a href="#chapter-4">4. Advanced Option</a>
-                    <ul>
-                        <li><a href="#ui-layout">4.1 Advanced UI Layout</a></li>
-                        <li><a href="#source-display">4.2 Source & Display Columns</a></li>
-                        <li><a href="#item-addition">4.3 Item Addition Methods</a></li>
-                        <li><a href="#calculation">4.4 Calculation</a></li>
-                    </ul>
-                </li>
-                <li><a href="#chapter-5">5. Result Window</a></li>
+                <li><a href="#ui-layout">4.1 Advanced UI Layout</a></li>
+                <li><a href="#source-display">4.2 Source & Display</a></li>
+                <li><a href="#item-addition">4.3 Item Addition Methods</a></li>
+                <li><a href="#calculation">4.4 Calculation</a></li>
             </ul>
+        </details>
+
+        <!-- Chapter 5 -->
+        <details>
+            <summary><a href="#chapter-5" style="color:inherit; text-decoration:none;">5. Result Window</a></summary>
         </details>
     </nav>
 
@@ -79,45 +90,45 @@
     <main>
         <section id="chapter-1">
             <h2>1. Overview</h2>
-            <p><strong>DaB 2D Quantity Takeoff</strong> is a custom AutoCAD and Civil 3D utility designed to streamline extraction and calculation of linear lengths, surface areas, and item counts directly from your CAD drawings.</p>
+            <p><strong>DaB 2D Quantity Takeoff</strong> is a custom AutoCAD and Civil 3D utility engineered to streamline the extraction and calculation of linear lengths, surface areas, and item counts directly from your CAD drawings.</p>
         </section>
 
         <section id="chapter-2">
             <h2>2. Core Operation</h2>
-            <p>Upon activating the plugin via the command line (<code>QTY_UTI</code>), users are greeted with a primary workflow choice. The application operates in two main modes: <strong>Quick</strong> and <strong>Advanced</strong>.</p>
+            <p>Upon activating the plugin via the command line (<code>QTY_UTI</code>), users are greeted with a primary workflow choice. The application operates in two distinct modes: <strong>Quick</strong> and <strong>Advanced</strong>.</p>
             <p>Once calculations are processed, results are populated cleanly into a dedicated result window with options to review and export dataset metrics.</p>
         </section>
 
         <section id="chapter-3">
             <h2>3. Quick Option</h2>
-            <p>The <strong>Quick</strong> option is designed for rapid, automated evaluation. When selected, the tool instantly scans the drawing environment and compiles all linear, area, and count quantities across defined criteria without requiring complex manual setup.</p>
+            <p>The <strong>Quick</strong> option is built for rapid, automated evaluation. When invoked, the tool instantly scans the drawing environment and compiles all linear, area, and count quantities across defined criteria without requiring manual mapping setup.</p>
         </section>
 
         <section id="chapter-4">
             <h2>4. Advanced Option</h2>
-            <p>The <strong>Advanced</strong> option grants full user control over filtering, categorization, and custom measurements.</p>
+            <p>The <strong>Advanced</strong> option grants comprehensive user control over filtering, categorization, and custom measurements.</p>
             
             <h3 id="ui-layout">4.1 Advanced UI Layout</h3>
-            <p>The Advanced interface presents a split layout: the left pane displays all available drawing layers, while the central workspace features separate tabs for <strong>Linear</strong>, <strong>Area</strong>, and <strong>Count</strong> metrics accompanied by <strong>Add</strong> and <strong>Remove</strong> control buttons.</p>
+            <p>The Advanced interface features a split layout: the left pane displays all available drawing layers, while the central workspace houses dedicated tabs for <strong>Linear</strong>, <strong>Area</strong>, and <strong>Count</strong> metrics alongside <strong>Add</strong> and <strong>Remove</strong> control tools.</p>
 
             <h3 id="source-display">4.2 Source & Display Columns</h3>
-            <p>Inside each tab, items are organized into two columns: <strong>Source</strong> and <strong>Display</strong>. Note that items assigned the exact same display name will automatically aggregate and add their quantities together into a single summary line.</p>
+            <p>Inside each tab, items are categorized into two columns: <strong>Source</strong> and <strong>Display</strong>. Items assigned the exact same display name will automatically aggregate and sum their quantities together.</p>
 
             <h3 id="item-addition">4.3 Item Addition Methods</h3>
-            <p>Items can be added to your takeoff lists through multiple workflows:</p>
+            <p>Items can be added to your takeoff lists using multiple workflows:</p>
             <ul>
-                <li><strong>By Layer:</strong> Pull elements directly based on source layer assignments.</li>
-                <li><strong>From Selection:</strong> Manually pick specific entities directly from model space.</li>
-                <li><strong>Manual Tracing:</strong> If no pre-existing geometry is available, users can define quantities manually by tracing either a linear path or a closed area boundary directly in the drawing.</li>
+                <li><strong>By Layer:</strong> Extract elements based directly on source layer assignments.</li>
+                <li><strong>From Selection:</strong> Manually pick specific entities straight from model space.</li>
+                <li><strong>Manual Tracing:</strong> If no geometry exists, users can define quantities manually by tracing linear paths or closed area boundaries.</li>
             </ul>
 
             <h3 id="calculation">4.4 Calculation</h3>
-            <p>Once your sources and display categories are fully configured and mapped, click the <strong>Calculate</strong> button to process the rules against the current drawing data.</p>
+            <p>Once your sources and display categories are fully configured, click the <strong>Calculate</strong> button to process the evaluation against the current drawing dataset.</p>
         </section>
 
         <section id="chapter-5">
             <h2>5. Result Window</h2>
-            <p>The final <strong>Result Window</strong> displays a structured table of all extracted quantities, categorized neatly by type. From here, users can review totals and export data to standard external formats for reporting and cost estimation.</p>
+            <p>The final <strong>Result Window</strong> exhibits a structured table of all extracted quantities, categorized by type. From here, users can review final sums and export metrics for cost estimation and reporting.</p>
         </section>
     </main>
 

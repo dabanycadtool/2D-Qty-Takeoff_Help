@@ -127,23 +127,23 @@
         <!-- ========================================== -->
         <!-- CHAPTER 1: OVERVIEW                        -->
         <!-- ========================================== -->
-     <h2 id="getting-started">Getting Started</h2>
+    <h2 id="getting-started">Getting Started</h2>
 <p>The <strong>DaB ANY CAD Tool: 2D Quantity Takeoff</strong> is a professional quantity takeoff solution engineered for Autodesk® AutoCAD® and Civil 3D®. It streamlines estimation workflows by accurately extracting and calculating linear lengths, surface areas, and item counts directly from your CAD drawing environment using custom layer rules, direct object selections, or user-defined quantities.</p>
             
             <h3>System Requirements</h3>
             <ul>
-                <li><strong>Host Application:</strong> Autodesk® AutoCAD® or Civil 3D® (Versions 2025 through 2026+)</li>
+                <li><strong>Host Application:</strong> Autodesk® AutoCAD® or Civil 3D® (Versions 2021 through 2026+)</li>
                 <li><strong>Operating System:</strong> Microsoft® Windows® 10 or 11 (64-bit / x64 Architecture Required)</li>
-                <li><strong>Runtime Environment:</strong> Microsoft® .NET Desktop Runtime 8.0 (automatically managed by modern AutoCAD installations)</li>
-                <li><strong>User Interface Framework:</strong> Windows Presentation Foundation (WPF) Desktop Core</li>
+                <li><strong>Runtime Environment:</strong> Multi-targeted support for Microsoft® .NET Framework 4.8 (AutoCAD 2021–2024) and .NET Desktop Runtime 8.0 (AutoCAD 2025–2026+)</li>
+                <li><strong>User Interface Framework:</strong> Windows Presentation Foundation (WPF) / Windows Forms Desktop Architecture</li>
             </ul>
 
             <h3>Installation & Quick Launch</h3>
-            <p>The utility features a fully automated installer tailored for the Autodesk® App Store environment. Upon executing the <code>.msi</code> package, all binaries, dependencies, and menu configurations are deployed directly into your system's secure <code>ApplicationPlugins</code> directory.</p>
+            <p>The utility features a fully automated installer tailored for the Autodesk® App Store environment. Upon deployment, all binaries, dependencies, and menu configurations are structured into dedicated subfolders under your system's secure <code>ApplicationPlugins</code> directory to support multi-version environments seamlessly.</p>
             <p>To initialize the program within your active CAD workspace:</p>
             <ol style="line-height: 1.6; margin-left: 20px;">
-                <li>Launch AutoCAD® or Civil 3D® (Version 2025 or newer).</li>
-                <li>Look for the newly added DaB ANY CAD Tools tab on your top AutoCAD Ribbon menu interface.</li>
+                <li>Launch AutoCAD® or Civil 3D® (Any supported version from 2021 to 2026+).</li>
+                <li>Look for the newly added DaB ANY CAD Tools tab on your top AutoCAD Ribbon menu interface (loaded via dynamic XML autoloader standards).</li>
                 <li>Click the 2D Quantity Takeoff button icon within the ribbon panel to dynamically toggle the interface control board.</li>
                 <li><em>Alternative Command Line Method:</em> You can also type <code>QTY_UTI</code> directly into the command prompt at any time to execute the app.</li>
             </ol>

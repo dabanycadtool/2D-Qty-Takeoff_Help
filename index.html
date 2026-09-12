@@ -47,7 +47,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             window.scrollTo(0, 0);
 
-            // Automatically open parent <details> if a sub-link is clicked or targeted
+            // Automatically open parent <details> if a sub-link is clicked
             document.querySelectorAll('nav a').forEach(link => {
                 link.addEventListener('click', () => {
                     const parentDetails = link.closest('details');
@@ -111,7 +111,7 @@
             </ul>
         </details>
 
-        <!-- Chapter 5 (Fixed Hyperlinks) -->
+        <!-- Chapter 5 -->
         <details>
             <summary><a href="#chapter-5" style="color:inherit; text-decoration:none;">5. Result Window</a></summary>
             <ul>
@@ -286,8 +286,9 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
         <!-- CHAPTER 5: RESULT WINDOW                   -->
         <!-- ========================================== -->
         <section id="chapter-5">
-            <h2 id="chapter-5">5. Result Window</h2>
-            <p id="results-overview">The final <strong>Result Window</strong> (powered by <code>QuantityResultsWindow</code>) acts as the comprehensive master report summarizing all aggregated <strong>Linear</strong>, <strong>Area</strong>, and <strong>Count</strong> measurements collected from your Advanced configuration panel or Quick selection routines.</p>
+            <h2>5. Result Window</h2>
+            <h3 id="results-overview">Results Window Overview</h3>
+            <p>The final <strong>Result Window</strong> (powered by <code>QuantityResultsWindow</code>) acts as the comprehensive master report summarizing all aggregated <strong>Linear</strong>, <strong>Area</strong>, and <strong>Count</strong> measurements collected from your Advanced configuration panel or Quick selection routines.</p>
             
             <p>Adhering to strict Autodesk App Store usability guidelines, the window features an adaptive layout with a native theme toggle (<code>🌓 Theme</code>) ensuring seamless visual integration under both Dark and Light workspace themes.</p>
 

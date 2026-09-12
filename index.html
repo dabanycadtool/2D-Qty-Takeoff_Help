@@ -1,6 +1,3 @@
-Here is the finalized HTML user manual. It incorporates your final request: **all chapters are collapsed by default** (except the first one, or you can have them all completely closed on initial load), and the automated scroll script guarantees the page instantly scrolls to the top (`0, 0`) upon opening or reloading.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,13 +39,30 @@ Here is the finalized HTML user manual. It incorporates your final request: **al
         pre { background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px solid #e9ecef; overflow-x: auto; }
     </style>
 
-    <!-- Automated Scroll-to-Top and Collapse Logic Execution Script -->
+    <!-- Automated Scroll-to-Top and Link Action Script -->
     <script>
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
         window.addEventListener('DOMContentLoaded', () => {
             window.scrollTo(0, 0);
+
+            // Automatically open parent <details> if a sub-link is clicked or targeted
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            // Find parent details of this link and ensure it is open
+                            const parentDetails = link.closest('details');
+                            if (parentDetails) {
+                                parentDetails.open = true;
+                            }
+                        }
+                    }
+                });
+            });
         });
     </script>
 </head>
@@ -60,8 +74,8 @@ Here is the finalized HTML user manual. It incorporates your final request: **al
             <img src="DaB_ANY_Logo.png" alt="DaB ANY CAD Tools">
         </div>
         
-        <!-- Chapter 1 (Open by default on start) -->
-        <details open>
+        <!-- Chapter 1 (Collapsed by default) -->
+        <details>
             <summary><a href="#chapter-1" style="color:inherit; text-decoration:none;">1. Overview</a></summary>
             <ul>
                 <li><a href="#getting-started">Getting Started</a></li>
@@ -93,7 +107,7 @@ Here is the finalized HTML user manual. It incorporates your final request: **al
 
         <!-- Chapter 4 (Collapsed by default) -->
         <details>
-            <summary>4. Advanced Option</summary>
+            <summary><a href="#chapter-4" style="color:inherit; text-decoration:none;">4. Advanced Option</a></summary>
             <ul>
                 <li><a href="#advanced-overview">Panorama Interface & Layout</a></li>
                 <li><a href="#available-layers">Available Layers List</a></li>
@@ -106,7 +120,7 @@ Here is the finalized HTML user manual. It incorporates your final request: **al
 
         <!-- Chapter 5 (Collapsed by default) -->
         <details>
-            <summary>5. Result Window</summary>
+            <summary><a href="#chapter-5" style="color:inherit; text-decoration:none;">5. Result Window</a></summary>
             <ul>
                 <li><a href="#results-overview">Results Window Overview</a></li>
                 <li><a href="#results-datagrid">Data Grid Structure & Aggregation</a></li>
@@ -279,7 +293,7 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
         <!-- CHAPTER 5: RESULT WINDOW                   -->
         <!-- ========================================== -->
         <section id="chapter-5">
-            <h2 id="results-overview">5. Result Window</h2>
+            <h2>5. Result Window</h2>
             <p>The final <strong>Result Window</strong> (powered by <code>QuantityResultsWindow</code>) acts as the comprehensive master report summarizing all aggregated <strong>Linear</strong>, <strong>Area</strong>, and <strong>Count</strong> measurements collected from your Advanced configuration panel or Quick selection routines.</p>
             
             <p>Adhering to strict Autodesk App Store usability guidelines, the window features an adaptive layout with a native theme toggle (<code>🌓 Theme</code>) ensuring seamless visual integration under both Dark and Light workspace themes.</p>
@@ -304,5 +318,3 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
 
 </body>
 </html>
-
-```

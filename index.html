@@ -129,7 +129,7 @@
         <!-- ========================================== -->
         <section id="chapter-1">
             <h2 id="getting-started">Getting Started</h2>
-            <p>The <strong>DaB 2D Quantity Takeoff</strong> is a high-performance utility engineered for Autodesk® AutoCAD® and Civil 3D®. It streamlines estimation workflows by accurately extracting and calculating linear lengths, surface areas, and item counts directly from your CAD drawing environment based on custom layer rules and selections.</p>
+            <p>The DaB ANY CAD Tool 2D Quantity Takeoff is a utility for Autodesk® AutoCAD® and Civil 3D®. It streamlines estimation workflows by accurately extracting and calculating linear lengths, surface areas, and item counts directly from your CAD drawing environment based on custom layer rules, selections or by defining Linear and Area.</p>
             
             <h3>System Requirements</h3>
             <ul>
@@ -143,21 +143,21 @@
             <p>The utility features a fully automated installer tailored for the Autodesk® App Store environment. Upon executing the <code>.msi</code> package, all binaries, dependencies, and menu configurations are deployed directly into your system's secure <code>ApplicationPlugins</code> directory.</p>
             <p>To initialize the program within your active CAD workspace:</p>
             <ol style="line-height: 1.6; margin-left: 20px;">
-                <li>Launch <strong>AutoCAD®</strong> or <strong>Civil 3D®</strong> (Version 2025 or newer).</li>
-                <li>Look for the newly added <strong>DaB ANY CAD Tools</strong> tab on your top AutoCAD Ribbon menu interface.</li>
-                <li>Click the <strong>2D Quantity Takeoff</strong> button icon within the ribbon panel to dynamically toggle the interface control board.</li>
-                <li><em>Alternative Command Line Method:</em> You can also type <strong><code>QTY_UTI</code></strong> directly into the command prompt at any time to execute the app.</li>
+                <li>Launch AutoCAD® or Civil 3D® (Version 2025 or newer).</li>
+                <li>Look for the newly added DaB ANY CAD Tools tab on your top AutoCAD Ribbon menu interface.</li>
+                <li>Click the 2D Quantity Takeoff button icon within the ribbon panel to dynamically toggle the interface control board.</li>
+                <li><em>Alternative Command Line Method:</em> You can also type <code>QTY_UTI</code> directly into the command prompt at any time to execute the app.</li>
             </ol>
 
             <h2 id="licence">Licence Management</h2>
-            <p>We provide a fully functional, risk-free <strong>3-Day Free Trial</strong> for all new users to evaluate the takeoff calculation engine. After the trial period expires, a valid license key is required to maintain access to extraction and export routines.</p>
+            <p>We provide a fully functional, risk-free 30-Day Free Trial for all new users to evaluate the 2D Quantity takeoff calculation engine. After the trial period expires, a valid license key is required to maintain access to extraction and export routines.</p>
             
             <h3>Activation Steps</h3>
-            <p>When the application launches or when evaluating trial status, the licensing screen will display your unique, secure <strong>Hardware Fingerprint (Machine ID)</strong>.</p>
+            <p>When the application launches or when evaluating trial status, the licensing screen will display your unique, secure Hardware Fingerprint (Machine ID).</p>
             <ol style="line-height: 1.6; margin-left: 20px;">
                 <li>Copy the generated Machine ID string directly from the prompt window or About form.</li>
                 <li>Submit this ID alongside your Autodesk App Store purchase confirmation to receive your unique activation key.</li>
-                <li>Paste your key into the text field and click <strong>Activate License</strong>. The utility will store this authorization locally on your device for uninterrupted usage.</li>
+                <li>Paste your key into the text field and click Activate License. The utility will store this authorization locally on your device for uninterrupted usage.</li>
             </ol>
 
             <h2 id="policy">Privacy Policy & Security Compliance</h2>
@@ -175,21 +175,20 @@
         <!-- ========================================== -->
         <section id="chapter-2">
             <h2>2. Core Operation</h2>
-            <p>The Core Operation workflow dictates how users interact with the tool, define quantities, and extract datasets from the CAD workspace.</p>
+            <p>The application is activated directly from the DaB ANY CAD Tools ribbon tab or by entering the command <code>QTY_UTI</code> in the command line. Once launched, users are greeted with a primary mode selection offering two distinct paths:</p>
 
             <h3 id="core-how-to-use">How to Use the Application</h3>
-            <p>The application is activated directly from the <strong>DaB ANY CAD Tools</strong> ribbon tab or by entering the command <code>QTY_UTI</code> in the command line. Once launched, users are greeted with a primary mode selection offering two distinct paths:</p>
             <ul>
-                <li><strong><a href="#chapter-3">Quick Option</a>:</strong> An automated, streamlined workflow designed for instant drawing evaluation.</li>
-                <li><strong><a href="#chapter-4">Advanced Option</a>:</strong> A fully customizable environment granting granular control over layers, object mappings, and manual measurement workflows.</li>
+                <li><strong>Quick Option:</strong> An automated, streamlined workflow designed for instant drawing evaluation.</li>
+                <li><strong>Advanced Option:</strong> A fully customizable environment granting granular control over layers, object selection, and manual defining for measurement workflows.</li>
             </ul>
 
             <h3 id="measurable-items">Measurable Quantities & Units</h3>
             <p>The tool processes three core engineering quantity categories, reporting values directly matching your active CAD drawing units:</p>
             <ul>
-                <li><strong>Linear:</strong> Measures continuous lengths (e.g., curbs, pipes, fences, or polylines) reported in linear drawing units.</li>
-                <li><strong>Area:</strong> Evaluates closed boundary surfaces (e.g., pavement patches, sodding, or building footprints) reported in square drawing units.</li>
-                <li><strong>Count:</strong> Quantifies discrete item occurrences (e.g., manholes, signs, trees, or blocks) reported as absolute numerical quantities.</li>
+                <li><strong>Linear:</strong> Measures continuous lengths (e.g., Line, polylines, ...) reported in linear drawing units.</li>
+                <li><strong>Area:</strong> Evaluates closed boundary surfaces (e.g., Closed polygons, Hatches, ...) reported in square drawing units.</li>
+                <li><strong>Count:</strong> Quantifies discrete block item occurrences (e.g., manholes, signs, trees, if cad blocks) reported as absolute numerical quantities.</li>
             </ul>
 
             <h3 id="item-import-methods">Item Import Methods</h3>
@@ -206,20 +205,20 @@
         <!-- ========================================== -->
         <section id="chapter-3">
             <h2 id="quick-overview">3. Quick Option</h2>
-            <p>The <strong>Quick Option</strong> mode is designed for rapid, straightforward takeoffs directly from drawing elements without requiring complex configuration panels. When selected, the tool prompts you inside the AutoCAD command line to interact with your drawing objects.</p>
+            <p>The Quick Option mode is designed for rapid, straightforward takeoffs directly from drawing elements . When selected, the tool prompts you inside the AutoCAD command line to interact with your drawing objects.</p>
             
             <p>During execution, the command prompt displays the following interactive mode prompt:</p>
             <pre><code>Select objects:
 Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
 
             <h3 id="quick-only-selected">Only-Selected</h3>
-            <p>When this mode is active, <strong>Only-Selected</strong> ensures that strictly the individual items and drawing entities you manually clicked or window-selected are evaluated and added to the calculation list. Surrounding objects on the same layer are ignored.</p>
+            <p>When this mode is active, Only-Selected ensures that strictly the individual items and drawing entities you manually clicked or window-selected are evaluated and added to the calculation list. Surrounding objects on the same layer are ignored.</p>
 
             <h3 id="quick-entire-layer">Entire-Layer</h3>
-            <p>Selecting <strong>Entire-Layer</strong> switches the scope so that once an object is picked, all matching geometry residing on that same source layer across the drawing environment is aggregated and added to the calculation dataset automatically.</p>
+            <p>Selecting Entire-Layer switches the scope so that once an object is picked, all matching geometry residing on that same source layer across the drawing environment is aggregated and added to the calculation dataset automatically.</p>
 
             <h3 id="quick-result-window">Quick Result Window & Export Methods</h3>
-            <p>Following object selection, the data compiles instantly into the <strong>Quantity Takeoff Results</strong> window. Adhering to professional Autodesk App Store design standards, this window features an adaptive interface with a built-in theme toggle (<code>🌓 Theme</code>) supporting dynamic Dark and Light workspace layouts.</p>
+            <p>Following object selection, the data compiles instantly into the Quantity Takeoff Results window. This window features an adaptive interface with a built-in theme toggle (<code>🌓 Theme</code>) supporting dynamic Dark and Light workspace layouts.</p>
             
             <p>The results window displays a clean data grid layout containing:</p>
             <ul>
@@ -241,20 +240,19 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
         <!-- ========================================== -->
         <section id="chapter-4">
             <h2>4. Advanced Option</h2>
-            <p>The <strong>Advanced Option</strong> provides a professional, highly configurable panoramic setup interface (<code>AdvancedSetupForm</code>) designed for large-scale multi-disciplinary civil engineering projects. It grants complete oversight over layer mapping, categorization rules, and custom measurement setups.</p>
-
             <h3 id="advanced-overview">Panorama Interface & Layout</h3>
-            <p>Located on the left-hand panel of the interface, the <strong>Available Layers</strong> list automatically scans and populates all active layers present in your current CAD drawing environment. A descriptive search and multiselect block allows you to review layers containing target elements before assignment.</p>
+            <p>The Advanced Option provides a professional, highly configurable panoramic setup interface (<code>AdvancedSetupForm</code>) designed for large-scale multi-disciplinary civil engineering projects. It grants complete oversight over layer mapping, categorization rules, and custom measurement setups.</p>
 
             <h3 id="available-layers">Available Layers List</h3>
-            <p>The central and right workspace features a tabbed structure dividing calculations into three distinct engineering disciplines:</p>
-            <ul>
-                <li><strong>📏 Linear:</strong> For continuous length measurements (e.g., curbs, pipes, retaining walls).</li>
-                <li><strong>▧ Area:</strong> For closed surface boundary evaluations (e.g., pavement, sodding, structural pads).</li>
-                <li><strong>📌 Count:</strong> For discrete item tracking (e.g., signs, manholes, utility poles).</li>
-            </ul>
+            <p>Located on the left-hand panel of the interface, the Available Layers list automatically scans and populates all active layers present in your current CAD drawing environment. A descriptive search and multiselect block allows you to review layers containing target elements before assignment.</p>
 
             <h3 id="category-tabs">Category Tabs & Source/Display Mappings</h3>
+            <p>The central and right workspace features a tabbed structure dividing calculations into three distinct engineering disciplines:</p>
+            <ul>
+                <li><strong>📏 Linear:</strong> For continuous length measurements </li>
+                <li><strong>▧ Area:</strong> For closed surface boundary evaluations </li>
+                <li><strong>📌 Count:</strong> For discrete block item  </li>
+            </ul>
             <p>Using the middle transfer buttons (<code>Add ➔</code> and <code>← Remove</code>), selected layers from the available list can be assigned directly into active calculation grids. Each tab features a dual-column layout:</p>
             <ul>
                 <li><strong>Source Layer:</strong> Locked (read-only) parameter tracking the native AutoCAD layer that the item is physically placed on in the drawing.</li>
@@ -266,20 +264,20 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
             </div>
 
             <h3 id="item-addition-methods">Advanced Import Workflows</h3>
-            <p>In addition to standard layer mapping, the left control panel provides powerful alternative import mechanisms via dedicated action buttons:</p>
+            <p>In addition to standard layer mapping, the Advanced Option panel provides alternative import mechanisms via dedicated action buttons:</p>
             <ul>
                 <li><strong>🎯 Add from Selection (&lt;):</strong> Interactively prompts you to select specific objects directly from model space. This mirrors the quick method logic, letting you filter and include either strictly selected items or all matching entities on that layer.</li>
                 <li><strong>⚙️ Define (&gt;):</strong> Opens manual definition tools allowing you to trace or define custom linear paths and area boundaries on modular engineering axes if pre-existing drawing geometry is unavailable.</li>
             </ul>
 
             <h3 id="verification-context-menu">Verification & Right-Click Context Menu</h3>
-            <p>To ensure total accuracy and data integrity across complex drawings, the Advanced setup provides a built-in verification tool. You can <strong>Right-Click</strong> on any added row inside the Linear, Area, or Count data grids to access a contextual menu option:</p>
+            <p>To ensure total accuracy and data integrity across complex drawings, the Advanced setup provides a built-in verification tool. You can Right-Click on any added row inside the Linear, Area, or Count data grids to access a contextual menu option:</p>
             <ul>
                 <li><strong>Select Objects on this Layer:</strong> Instantly highlights and selects the corresponding objects inside your model space drawing window, allowing you to visually confirm that the correct geometry is linked into the calculation engine.</li>
             </ul>
 
             <h3 id="advanced-calculation">Calculation & Execution</h3>
-            <p>Once your layers, categories, display names, and custom mappings are fully configured across the tabs, click the <strong>Calculate</strong> button in the bottom-right corner. This processes your custom rules against the drawing dataset and launches the structured <a href="#chapter-5">Result Window</a>.</p>
+            <p>Once your layers, categories, display names, and custom mappings are fully configured across the tabs, click the Calculate button in the bottom-right corner. This processes your custom rules against the drawing dataset and launches the structured <a href="#chapter-5">Result Window</a>.</p>
         </section>
 
         <!-- ========================================== -->
@@ -288,14 +286,14 @@ Add Item [Only-selected/Entire-layer] &lt;Only-selected&gt;:</code></pre>
         <section id="chapter-5">
             <h2>5. Result Window</h2>
             <h3 id="results-overview">Results Window Overview</h3>
-            <p>The final <strong>Result Window</strong> (powered by <code>QuantityResultsWindow</code>) acts as the comprehensive master report summarizing all aggregated <strong>Linear</strong>, <strong>Area</strong>, and <strong>Count</strong> measurements collected from your Advanced configuration panel or Quick selection routines.</p>
+            <p>The final Result Window (powered by <code>QuantityResultsWindow</code>) acts as the comprehensive master report summarizing all aggregated Linear, Area, and Count measurements collected from your Advanced configuration panel or Quick selection routines.</p>
             
             <p>Adhering to strict Autodesk App Store usability guidelines, the window features an adaptive layout with a native theme toggle (<code>🌓 Theme</code>) ensuring seamless visual integration under both Dark and Light workspace themes.</p>
 
             <h3 id="results-datagrid">Data Grid Structure & Aggregation</h3>
             <p>The center of the window houses a clean, read-only data grid organized into three precise columns:</p>
             <ul>
-                <li><strong>Item:</strong> Displays the final consolidated <em>Display Name</em> pulled directly from your configuration settings, grouping identical elements together.</li>
+                <li><strong>Item:</strong> Displays the final consolidated Display Name pulled directly from your configuration settings, grouping identical elements together.</li>
                 <li><strong>Quantity:</strong> Shows the precise mathematical sum formatted to two decimal places (<code>{0:N2}</code>) matching your current CAD drawing scale and unit tolerances.</li>
                 <li><strong>Unit:</strong> Clearly defines the measurement unit type corresponding to the active category (e.g., linear units, square units, or item counts).</li>
             </ul>
